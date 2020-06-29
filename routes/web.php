@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +22,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/users/{id}', 'UserController@show');
+
+Route::get('me', 'UserController@edit');
+
+Route::get('home', function () {
+    return redirect('mypage');
+});
+
+Route::get('mypage','MypageController@show');
+
+Route::get('opinionaire_create','OpinionaireController@show');
+
+Route::post('opinionaire_comfirm','OpinionaireController@comfirm');
+
+Route::get('opinionaire_create','OpinionaireController@show');
+
+
