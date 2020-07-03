@@ -18,6 +18,16 @@
     @endforeach
 </div>
 
-<form action='question_save'>
+<form action='question_save' method='POST'>
+    @csrf
+    <input type='hidden' name='title' value='{{$title}}'>
+    @foreach ($questions as $index => $question)
+    <input type='hidden' name='{{"questions[{$index}][type]"}}' value='{{$question["type"]}}'>
+        @if ($question['type'] =='radio' || $question['type'] =='checkbox')
+        @foreach ($question['items'] as $i => $item)
+            <input type='hidden' name='{{"questions[{$index}][items][{$i}]"}}' value='{{$item}}'>
+        @endforeach
+        @endif
+    @endforeach
 <button type='submit'>SAVE</button>
 </form>
