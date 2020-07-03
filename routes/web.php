@@ -35,8 +35,11 @@ Route::get('mypage','MypageController@show');
 
 Route::get('opinionaire_create','OpinionaireController@show');
 
-Route::post('opinionaire_comfirm','OpinionaireController@comfirm');
+Route::post('opinionaire_confirm','OpinionaireController@comfirm');
 
-Route::get('opinionaire_create','OpinionaireController@show');
+Route::post('opinionaire_create','OpinionaireController@show');
+
+Route::post('question_save','OpinionaireController@save');
+
 
 
