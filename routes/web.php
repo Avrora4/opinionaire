@@ -3,6 +3,7 @@
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,15 +32,27 @@ Route::get('home', function () {
     return redirect('mypage');
 });
 
-Route::get('mypage','MypageController@show');
+Route::post('opinionaire_answer','OpinionaireController@answer');
 
-Route::get('opinionaire_create','OpinionaireController@show');
+Route::middleware('auth')->group(function () {
+    
+    Route::get('mypage','MypageController@show');
 
-Route::post('opinionaire_confirm','OpinionaireController@comfirm');
+    Route::get('opinionaire_create','OpinionaireController@show');
 
-Route::post('opinionaire_create','OpinionaireController@show');
+    Route::post('opinionaire_confirm','OpinionaireController@comfirm');
 
-Route::post('question_save','OpinionaireController@save');
+    Route::post('opinionaire_create','OpinionaireController@show');
+
+    Route::post('opinionaire_save','OpinionaireController@save');
+
+});
+
+//Route::get('opinionaire_{{$opinionaire->user_id}}_{{$opinionaire->title}}','');
+
+Route::get('answer/{id}','AnswerController@choose');
+
+
 
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Opinionaire;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OpinionaireController extends Controller
 {
@@ -28,13 +29,16 @@ class OpinionaireController extends Controller
         $title = $request->input('title');
         $questions = $request->input("questions");
 
-        $q = new Opinionaire;
-        //$q->user_id = Auth::id();
-        $q->user_id = 1;
-        $q->title = $title;
-        $q->questions = json_encode($questions);
-        $q->save();
-        return view('users.opinionaire_complete');
+        $opinionaire = new Opinionaire;
+        $opinionaire->user_id = Auth::id();
+        $opinionaire->title = $title;
+        $opinionaire->questions = json_encode($questions);
+        $opinionaire->save();
+
+        return view('users.opinionaire_complete',[
+            "title" => $title,
+            "opinionaire" => $opinionaire
+        ]);
     }
-    
+
 }
