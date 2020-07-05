@@ -50,7 +50,11 @@ Route::middleware('auth')->group(function () {
 
 //Route::get('opinionaire_{{$opinionaire->user_id}}_{{$opinionaire->title}}','');
 
-Route::get('answer/{id}','AnswerController@choose');
+Route::get('answer/{id}','AnswerController@answer');
+
+Route::post('answer/{id}/comfirm','AnswerController@comfirm');
+
+
 
 
 
