@@ -1,4 +1,7 @@
-<head>{{$user->name}}'s page</head>
+@extends('layouts.app')
+
+@section('content')
+<h1>{{$user->name}}'s page</h1>
 <br>
 <br>
     {{$user->name}}
@@ -6,7 +9,6 @@
     {{$user->email}}
 <br>
 <br>
-<body>
     <div class="CREATE">
     <a href="/opinionaire_create"><button>CREATE</button></a>
     </div>
@@ -24,8 +26,6 @@
     </div>
 
 
-
-</body>
-
+@endsection
 
 
