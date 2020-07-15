@@ -54,6 +54,8 @@ Route::get('answer/{id}','AnswerController@answer');
 
 Route::post('answer/{id}/comfirm','AnswerController@comfirm');
 
+Route::post('answer/{id}/save','AnswerController@save');
+
 
 
 

@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <h1>{{$opinionaire->title}}</h1>
 <form method='post' action='/answer/{{$opinionaire->id}}/save'>
     @csrf
@@ -37,5 +40,6 @@
             @endif
         @endforeach
     </div>
-    <button type='submit'>COMFIRM</button>
+    <button type='submit' class="btn btn-primary">COMFIRM</button>
 </form>
+@endsection

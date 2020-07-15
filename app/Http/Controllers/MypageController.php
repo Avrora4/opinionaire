@@ -19,5 +19,4 @@ class MypageController extends Controller
         return view('users.mypage', ['user' => $user] );
     }
 
-
 }
