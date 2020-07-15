@@ -11,7 +11,9 @@
     </div>
     <br>
     <br>
-    <div v-for="(question, index) in questions" style="margin-bottom:5px">
+    <div v-for="(question, index) in questions" style="margin-bottom:5px" class="card">
+    <div class="card-header">@{{index+1}}.Question</div>
+    <div class="card-body">
         <p>Enter the question contents!!</p>
         <input type='text' :name='"questions["+index+"][text]"' v-model='question.text' required class='form-control'>  
         <p>Choose the question form!</p>
@@ -28,6 +30,7 @@
             </ol>
             <button type='button' v-on:click='add_button(index)' class="btn btn-light" >ADD BUTTON</button>
         </div>
+    </div>
 
     </div>
     <button type='button' v-on:click='add_question' class="btn btn-light" style='margin:10px 0'>ADD QUESTION</button>
