@@ -46,6 +46,8 @@ Route::middleware('auth')->group(function () {
 
     Route::post('opinionaire_save','OpinionaireController@save');
 
+    Route::get('opinionaire/{id}/result','OpinionaireController@result');
+
 });
 
 //Route::get('opinionaire_{{$opinionaire->user_id}}_{{$opinionaire->title}}','');
@@ -55,6 +57,8 @@ Route::get('answer/{id}','AnswerController@answer');
 Route::post('answer/{id}/comfirm','AnswerController@comfirm');
 
 Route::post('answer/{id}/save','AnswerController@save');
+
+
 
 
 
