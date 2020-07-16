@@ -12,23 +12,26 @@
 
 <body>
     <div class="container">
-        <h1>{{$title}}</h1>
-        <div> 
+            <h1>{{$title}}</h1>
             @foreach ($questions as $index => $question)
-                <h2>{{$index+1}}. {{$question['text']}}</h2>
-                @if ($question['type'] =='text')
-                    <input type='text' name='{{"answers[{$index}]"}}'>
-                @elseif ($question['type'] =='number')
-                    <input type='number' name='{{"answers[{$index}]"}}'>
-                @elseif ($question['type'] =='radio')
-                    @foreach ($question['items'] as $i => $item)
-                        <input type='radio' name='{{"answers[{$index}]"}}' value='{{$i}}'> {{$item}}
-                    @endforeach
-                @elseif ($question['type'] =='checkbox')
-                    @foreach ($question['items'] as $i => $item)
-                        <input type='checkbox' name='{{"answers[{$index}]"}}' value='{{$i}}'> {{$item}}
-                    @endforeach
-                @endif
+                <div class="card-header">   
+                    <h2>{{$index+1}}. {{$question['text']}}</h2>
+                    <div class="card-body"> 
+                        @if ($question['type'] =='text')
+                            <input type='text' name='{{"answers[{$index}]"}}'><p></p>
+                        @elseif ($question['type'] =='number')
+                            <input type='number' name='{{"answers[{$index}]"}}'><p></p>
+                        @elseif ($question['type'] =='radio')
+                            @foreach ($question['items'] as $i => $item)
+                                <input type='radio' name='{{"answers[{$index}]"}}' value='{{$i}}'> {{$item}}<p></p>
+                            @endforeach
+                        @elseif ($question['type'] =='checkbox')
+                            @foreach ($question['items'] as $i => $item)
+                                <input type='checkbox' name='{{"answers[{$index}]"}}' value='{{$i}}'> {{$item}}<p></p>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
             @endforeach
             <p></p>
         </div>
@@ -45,7 +48,7 @@
                 @endforeach
                 @endif
             @endforeach
-        <button type='submit'>SAVE</button>
+        <button type='submit' class="btn btn-primary">SAVE</button>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

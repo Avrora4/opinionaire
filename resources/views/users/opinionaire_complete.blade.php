@@ -1,5 +1,13 @@
-<h1>Complete!!</h1>
+@extends('layouts.app')
 
-<div class='CREATE_URL'>  
-<a href="/answer/{{$opinionaire->id}}?{{$opinionaire->title}}"><button>/opinionaire_{{$opinionaire->user_id}}_{{$opinionaire->title}}</button></a>
+@section('content')
+<div class="complete_message">
+<h1>Congratulations!!</h1>
 </div>
+<div class="card-header">
+    <p>Please distribute this URL!</p>
+    <div class='CREATE_URL card_body' style='margin:5px 0'>  
+    <a href="/answer/{{$opinionaire->id}}?{{$opinionaire->title}}"><button class="btn btn-dark">/opinionaire_{{$opinionaire->user_id}}_{{$opinionaire->title}}</button></a>
+    </div>
+</div>
+@endsection
