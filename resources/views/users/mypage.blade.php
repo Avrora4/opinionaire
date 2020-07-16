@@ -1,28 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>{{$user->name}}'s page</h1>
-<br>
-<br>
-    {{$user->name}}
-<br>
-    {{$user->email}}
-<br>
-<br>
-    <div class="CREATE">
-    <a href="/opinionaire_create"><button>CREATE</button></a>
-    </div>
+<div class="title">
+    <h1>{{$user->name}}'s page</h1>
+</div>
+<div class="User_information">
+    <p>{{$user->name}}</p>
 
-<br>
-
-    <div class="ANSWER">
-    <a href="/opinionaire_answer"><button>ANSWER</button></a>
-    </div>
-
-<br>
-
-    <div class="DELETE">
-    <a href="/opinionaire_delete"><button>DESTROY</button></a>
+    <p>{{$user->email}}</p>
+    <p></p>
+    <div class="btn card-body">
+    <a href="/opinionaire_create"><button class="btn btn-info">CREATE</button></a>
+    <p></p>
+    <a href="/opinionaire_answer"><button class="btn btn-light">ANSWER</button></a>
+    <p></p>
+    <a href="/opinionaire_delete"><button class="btn btn-warning">DELETE</button></a>
     </div>
 
 

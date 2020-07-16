@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Finished Answer!!</h1>
+<div class="title">
+    <h1>Finished Answer!!</h1>
+</div>
 
 @endsection

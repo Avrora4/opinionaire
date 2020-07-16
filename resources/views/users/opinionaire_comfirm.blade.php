@@ -12,7 +12,9 @@
 
 <body>
     <div class="container">
+        <div class="title">
             <h1>{{$title}}</h1>
+        </div>
             @foreach ($questions as $index => $question)
                 <div class="card-header">   
                     <h2>{{$index+1}}. {{$question['text']}}</h2>

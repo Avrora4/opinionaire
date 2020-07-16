@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Opinonaire Create</h1>
-
+<div class="title">
+    <h1>Opinonaire Create</h1>
+</div>
 <form method="POST" action="opinionaire_confirm" id='creat_app' class='opinonaire_create' data-questions='<?= json_encode($questions)?>' >
     @csrf
     <div class="create_c">
@@ -17,10 +18,10 @@
                 <p>Enter the question contents!!</p>
                 <input type='text' :name='"questions["+index+"][text]"' v-model='question.text' required class='form-control'>  
                 <p>Choose the question form!</p>
-                <label><input type='radio' :name='"questions["+index+"][type]"' v-model='question.type' value='text' required>text</label>
-                <label><input type='radio' :name='"questions["+index+"][type]"' v-model='question.type' value='number' required>number</label>
-                <label><input type='radio' :name='"questions["+index+"][type]"' v-model='question.type' value='radio' required>radio</label>
-                <label><input type='radio' :name='"questions["+index+"][type]"' v-model='question.type' value='checkbox' required>checkbox</label>
+                <label><input type='radio' :name='"questions["+index+"][type]"' v-model='question.type' value='text' required> text</label>
+                <label><input type='radio' :name='"questions["+index+"][type]"' v-model='question.type' value='number' required> number</label>
+                <label><input type='radio' :name='"questions["+index+"][type]"' v-model='question.type' value='radio' required> radio</label>
+                <label><input type='radio' :name='"questions["+index+"][type]"' v-model='question.type' value='checkbox' required> checkbox</label>
 
                 <div v-if="question.type == 'radio' || question.type == 'checkbox'">
                     <ol>

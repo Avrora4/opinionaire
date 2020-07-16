@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>{{$title}}</h1>
+<div class="title">
+    <h1>{{$title}}</h1>
+</div>
 <form method='post' action='/answer/{{$opinionaire->id}}/comfirm'>
     @csrf 
     <div>

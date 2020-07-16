@@ -1,14 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>{{$opinionaire->title}}</h1>
+<div class="title">
+    <h1>{{$opinionaire->title}}</h1>
 <form method='post' action='/answer/{{$opinionaire->id}}/save'>
+</div>
     @csrf
     <div> 
         @foreach ($questions as $index => $question)
-        <div class="card-header">
+        <div class="card-header c-h">
             <h2>{{$index+1}}. {{$question['text']}}</h2>
-            <div class="card-body">
+            <div class="card-body c-b">
                 @if (is_array($answers[$index]))
                     @foreach ($answers[$index] as $a)
                         <input type='hidden' name='{{"answers[{$index}][]"}}' value='{{$a}}'>

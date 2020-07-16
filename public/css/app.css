@@ -1,1 +1,36 @@
-.opinonaire_create .create_c{color: cyan;}
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Mrs+Saint+Delafield&family=Open+Sans&family=Oswald&family=Raleway&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
+
+.create_c{
+    color: #00cccc;
+    font-size: xx-large;
+    font-family: 'Annie Use Your Telescope', cursive;
+}
+.title{
+    color: #ff37ff;
+    font-size: xx-large;
+    font-family: 'Mrs Saint Delafield', cursive;
+}
+
+.User_information{
+    font-size: xx-large;
+    font-family: 'Mrs Saint Delafield', cursive;
+}
+
+.card-body{
+    font-size: large;
+    font-family: 'Annie Use Your Telescope', cursive;
+}
+
+.card-header{
+    color: #00cccc;
+    font-size: xx-large;
+    font-family: 'Annie Use Your Telescope', cursive;
+}
+
+.btn{
+    font-size: xx-large;
+    font-family: 'Annie Use Your Telescope', cursive;
+}
+
+
