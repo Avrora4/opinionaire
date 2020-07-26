@@ -46,17 +46,17 @@ Route::middleware('auth')->group(function () {
 
     Route::post('opinionaire_save','OpinionaireController@save');
 
-    Route::get('opinionaire/{id}/result','OpinionaireController@result');
+    Route::get('opinionaire/{opinionaire}/result','ResultController@result');
 
 });
 
 //Route::get('opinionaire_{{$opinionaire->user_id}}_{{$opinionaire->title}}','');
 
-Route::get('answer/{id}','AnswerController@answer');
+Route::get('answer/{opinionaire}','AnswerController@answer');
 
-Route::post('answer/{id}/comfirm','AnswerController@comfirm');
+Route::post('answer/{opinionaire}/comfirm','AnswerController@comfirm');
 
-Route::post('answer/{id}/save','AnswerController@save');
+Route::post('answer/{opinionaire}/save','AnswerController@save');
 
 
 

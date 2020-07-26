@@ -10,10 +10,8 @@ use Illuminate\Support\Facades\DB;
 
 class AnswerController extends Controller
 {
-    public function answer($id)
+    public function answer(Opinionaire $opinionaire)
     {
-        $opinionaire = Opinionaire::find($id);
-
         return view('answer.answer',[
             'opinionaire' => $opinionaire,
             'title' => $opinionaire->title,
@@ -21,13 +19,9 @@ class AnswerController extends Controller
         ]);
     }
 
-    public function comfirm(Request $request,$id)
+    public function comfirm(Request $request,Opinionaire $opinionaire)
     {
-        $opinionaire = Opinionaire::find($id);
-
         $answer = $request->input("answers");
-
-        //dd($answer);
 
         return view('answer.answer_comfirm', [
             'opinionaire' => $opinionaire,
@@ -36,9 +30,8 @@ class AnswerController extends Controller
         ]);
     }
 
-    public function save(Request $request ,$id)
+    public function save(Request $request ,Opinionaire $opinionaire)
     {
-        $opinionaire = Opinionaire::find($id);
         $answers = $request->input("answers");
 
         $answer = new Answer;

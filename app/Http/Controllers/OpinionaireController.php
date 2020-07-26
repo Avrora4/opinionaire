@@ -42,19 +42,4 @@ class OpinionaireController extends Controller
         ]);
     }
 
-    public function result($id)
-    {
-        $opinionaire = Opinionaire::find($id);
-
-        $result =[];
-        foreach(Answer::where("opinionaire_id",$id)->get() as $row){
-            $result[] = $row->getAnswers();
-        }
-
-        return view('users.opinionaire_result',[
-            "opinionaire" => $opinionaire,
-            "result" => $result,
-            "questions" =>$opinionaire->getQuestions(),
-        ]);
-    }
 }

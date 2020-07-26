@@ -15,6 +15,8 @@
     <a href="/opinionaire_answer"><button class="btn btn-light">ANSWER</button></a>
     <p></p>
     <a href="/opinionaire_delete"><button class="btn btn-warning">DELETE</button></a>
+    <p></p>
+    <a href="/opinionaire/{id}/result"><button class="btn btn-primary">RESULT</button></a>
     </div>
 
 
