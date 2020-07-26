@@ -46,17 +46,19 @@ Route::middleware('auth')->group(function () {
 
     Route::post('opinionaire_save','OpinionaireController@save');
 
-    Route::get('opinionaire/{opinionaire}/result','ResultController@result');
+    Route::get('my/opinionaire','AnswerListController@list')->name("my_opinionaire");
+
+    Route::get('opinionaire/{opinionaire}/result','AnswerListController@result');
 
 });
 
 //Route::get('opinionaire_{{$opinionaire->user_id}}_{{$opinionaire->title}}','');
 
-Route::get('answer/{opinionaire}','AnswerController@answer');
+Route::get('answer/{opinionaire}','AnswerController@answer')->name("answer");
 
-Route::post('answer/{opinionaire}/comfirm','AnswerController@comfirm');
+Route::post('answer/{opinionaire}/comfirm','AnswerController@comfirm')->name("answer_comfirm");
 
-Route::post('answer/{opinionaire}/save','AnswerController@save');
+Route::post('answer/{opinionaire}/save','AnswerController@save')->name("answer_save");
 
 
 

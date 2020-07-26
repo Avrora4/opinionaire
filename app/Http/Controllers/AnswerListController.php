@@ -8,13 +8,25 @@ use App\Models\Answer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class OpinionaireController extends Controller
+class AnswerListController extends Controller
 {
+    public function list()
+    {   
+        $user = Auth::user();
+        $list = [];
+        foreach(Opinionaire::where("user_id", $user->id)->get() as $row){
+            $list[] = $row;
+        }
+
+        return view('AnswerList.list',[
+            "opinionaires" => $list,
+        ]);
+    }
 
     public function result(Opinionaire $opinionaire)
     {   
         $result =[];
-        foreach(Answer::where("opinionaire_id",$id)->get() as $row){
+        foreach(Answer::where("opinionaire_id", $opinionaire->id)->get() as $row){
             $result[] = $row->getAnswers();
         }
 
