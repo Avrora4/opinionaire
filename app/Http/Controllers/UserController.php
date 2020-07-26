@@ -8,10 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function show($id)
+    public function show(User $user)
     {
-        $user = User::find($id);
-        dd($user);
 
         return view('users.show', ['user' => $user]);
     }
