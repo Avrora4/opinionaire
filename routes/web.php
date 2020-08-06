@@ -50,9 +50,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('my/{opinionaire}/edit','AnswerListController@list')->name("my_opinionaire_edit");
     
-    Route::get('my/{opinionaire}/delete','AnswerListController@list')->name("my_opinionaire_delete");
+    Route::get('my/{opinionaire}/delete','AnswerListController@delete')->name("my_opinionaire_delete");
     
-    Route::get('my/{opinionaire}/answer','AnswerListController@list')->name("my_opinionaire_answer");
+    Route::get('my/{opinionaire}/answer','AnswerController@answer')->name("my_opinionaire_answer");
 
     Route::get('myopinionaire/{opinionaire}/result','AnswerListController@result')->name("my_opinionaire_result");
 

@@ -28,7 +28,7 @@
         </div>
         @endforeach
     </div>
-    <button type='submit' class="btn btn-info" style='margin:5px 0'>COMFIRM</button>
+    <button type='submit' class="btn btn-info" style='margin:5px 0'>ANSWER</button>
 </form>
 
 @endsection

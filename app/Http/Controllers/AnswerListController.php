@@ -7,6 +7,7 @@ use App\Models\Opinionaire;
 use App\Models\Answer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent;
 
 class AnswerListController extends Controller
 {
@@ -21,6 +22,21 @@ class AnswerListController extends Controller
         return view('AnswerList.list',[
             "opinionaires" => $list,
         ]);
+    }
+
+    public function edit()
+    {
+        $user = Auth::user();
+
+        return view('users.edit', ['user' => $user]);
+    }
+
+    public function delete(Opinionaire $opinionaire)
+    {
+        Answer::where("opinionaire_id", $opinionaire->id)->delete();
+        $opinionaire->delete();
+
+        return redirect("/");
     }
 
     public function result(Opinionaire $opinionaire)
