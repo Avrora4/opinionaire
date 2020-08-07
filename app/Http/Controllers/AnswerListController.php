@@ -36,7 +36,7 @@ class AnswerListController extends Controller
         Answer::where("opinionaire_id", $opinionaire->id)->delete();
         $opinionaire->delete();
 
-        return redirect("/");
+        return redirect("my/opinionaire");
     }
 
     public function result(Opinionaire $opinionaire)

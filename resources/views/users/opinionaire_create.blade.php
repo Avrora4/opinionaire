@@ -58,6 +58,9 @@ var app2 = new Vue({
         add_button:function(index){
             app2.$data.questions[index].items.push("");
             return false;
+        },
+        delete_question:function(){
+            
         }
      }
 });

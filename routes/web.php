@@ -48,7 +48,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('my/opinionaire','AnswerListController@list')->name("my_opinionaire");
 
-    Route::get('my/{opinionaire}/edit','AnswerListController@list')->name("my_opinionaire_edit");
+    Route::get('my/{opinionaire}/edit','AnswerListController@edit')->name("my_opinionaire_edit");
     
     Route::get('my/{opinionaire}/delete','AnswerListController@delete')->name("my_opinionaire_delete");
     
