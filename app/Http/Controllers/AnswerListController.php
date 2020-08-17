@@ -24,13 +24,6 @@ class AnswerListController extends Controller
         ]);
     }
 
-    public function edit()
-    {
-        $user = Auth::user();
-
-        return view('users.edit', ['user' => $user]);
-    }
-
     public function delete(Opinionaire $opinionaire)
     {
         Answer::where("opinionaire_id", $opinionaire->id)->delete();
