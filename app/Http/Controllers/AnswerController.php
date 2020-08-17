@@ -22,6 +22,7 @@ class AnswerController extends Controller
     public function comfirm(Request $request,Opinionaire $opinionaire)
     {
         $answer = $request->input("answers");
+        //dd([$answer,$opinionaire->getQuestions()]);
 
         return view('answer.answer_comfirm', [
             'opinionaire' => $opinionaire,

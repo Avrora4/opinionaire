@@ -46,6 +46,8 @@ class AnswerListController extends Controller
             $result[] = $row->getAnswers();
         }
 
+        //dd($result);
+
         return view('users.opinionaire_result',[
             "opinionaire" => $opinionaire,
             "result" => $result,
