@@ -43,7 +43,10 @@
         <button type='submit' class="btn btn-info" style='margin:5px 0'>COMFIRM</button>
     </div>
 </form>
-@endsection
+<div class='to_mypage'>
+    <a href="{{route('welcome')}}"><button class="btn btn-dark">HOME</button></a>
+</div>
+    @endsection
 
 @section('page_script')
 <script>

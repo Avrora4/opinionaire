@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
@@ -36,7 +36,9 @@ Route::post('opinionaire_answer','OpinionaireController@answer');
 
 Route::middleware('auth')->group(function () {
     
-    Route::get('mypage','MypageController@show');
+    Route::get('mypage','MypageController@show')->name("mypage");
+
+    Route::post('mypage','MypageController@show')->name("mypage_p");
 
     Route::get('opinionaire_create','OpinionaireController@show');
 

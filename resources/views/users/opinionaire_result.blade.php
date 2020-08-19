@@ -26,6 +26,9 @@
         </div>
         @endforeach
     </div>
+    <div class='to_mypage'>
+        <a href="{{route('welcome')}}"><button class="btn btn-dark">HOME</button></a>
+    </div>
 </body>
 @endsection
 
@@ -55,10 +58,28 @@
                 labels: questions[i].items,
                 datasets: [{
                     backgroundColor: '#00ffff',
-                    data: counter,     
-                }],
-            }
-        })
+                    data: counter,  
+                    }]
+            },
+            options: {
+                legend: {                          //凡例設定
+                display: false                 //表示設定
+                },
+                title: {
+                    display: true,
+                    text: 'Statistics'
+                },
+                scales: {
+                    yAxes: [{
+                            display: true,
+                            ticks: {
+                                min: 0,                            
+                                },
+                            }]
+                    }
+                }   
+            },
+        )    
     })
 </script>
 @endsection
