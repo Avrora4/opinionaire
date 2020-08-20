@@ -27,17 +27,15 @@
                     <ol>
                         <li v-for="(item,i) in question.items" class="form-group col-md-6">   
                             <input type='text' :name='"questions["+index+"][items]["+i+"]"' v-model='question.items[i]' required class='form-control'>
-                            <button type='button' v-on:click='delete_button(index,i)' class="btn btn-primary">DELETE BUTTON</button>
+                            <button type='button' v-on:click='delete_button(index,i)' class="btn btn-danger" style='margin:5px 0'>DELETE BUTTON</button>
                         </li>
                     </ol>
-                <button type='button' v-on:click='add_button(index)' class="btn btn-light" >ADD BUTTON</button>
+                    <button type='button' v-on:click='add_button(index)' class="btn btn-primary" style='margin:5px 55px'>ADD BUTTON</button>
             </div>
         </div>
     </div>
-    <button type='button' v-on:click='add_question' class="btn btn-light" style='margin:5px 0'>ADD QUESTION</button>
-    <button type='button' v-on:click='delete_question(index)' class="btn btn-primary">DELETE QUESTION</button>
-          
-
+    <button type='button' v-on:click='add_question' class="btn btn-primary" style='margin:5px 0'>ADD QUESTION</button>
+    <button type='button' v-on:click='delete_question(index)' class="btn btn-danger" style='margin:5px 0'>DELETE QUESTION</button>
 <br>
     <div class='c_b'>
         <button type='submit' class="btn btn-info" style='margin:5px 0'>COMFIRM</button>
