@@ -2,10 +2,10 @@
 簡単にアンケートを作成でき、ボタン一つで結果を表示できるアンケートフォーラムです。
 
 # DEMO
-![](doc/sample1.gif)
-![](doc/sample2.gif)
-![](doc/sample3.gif)
-![](doc/sample4.gif)
+![](sample1.gif)
+![](sample2.gif)
+![](sample3.gif)
+![](sample4.gif)
 # Features
 アンケートを簡単に作成することができます。
 このアンケートフォームのポイントはボタン一つでいろいろな操作ができるという点です。
