@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="title">
-    <h1>Opinonaire Create</h1>
+    <h1>Opinonaire Edit</h1>
 </div>
 <form method="POST" action="{{route('my_opinionaire_edit_save',['opinionaire'=>$opinionaire])}}" id='creat_app' class='opinonaire_create' data-questions='<?= json_encode($questions)?>' >
     @csrf
@@ -16,7 +16,12 @@
         <div class="card-header">@{{index+1}}.Question</div>
             <div class="card-body">
                 <p>Enter the question contents!!</p>
-                <input type='text' :name='"questions["+index+"][text]"' v-model='question.text' required class='form-control'>  
+                <input type='text' :name='"questions["+index+"][text]"' v-model='question.text' required class='form-control'>
+                <div class="attention">
+                    <p>Don`t use single quotation!</p>
+                </div>
+                <p></p>
+                <p></p>
                 <p>Choose the question form!</p>
                 <label><input type='radio' :name='"questions["+index+"][type]"' v-model='question.type' value='text' required> text</label>
                 <label><input type='radio' :name='"questions["+index+"][type]"' v-model='question.type' value='number' required> number</label>
@@ -36,7 +41,7 @@
     </div>
     <button type='button' v-on:click='add_question' class="btn btn-primary" style='margin:5px 0'>ADD QUESTION</button>
     <button type='button' v-on:click='delete_question(index)' class="btn btn-danger" style='margin:5px 0'>DELETE QUESTION</button>
-<br>
+    <br>
     <div class='c_b'>
         <button type='submit' class="btn btn-info" style='margin:5px 0'>COMFIRM</button>
     </div>

@@ -18,7 +18,7 @@
 }
 
 .card-body{
-    font-size: large;
+    font-size: xx-large;
     font-family: 'Annie Use Your Telescope', cursive;
 }
 
@@ -50,5 +50,11 @@
 
 .to_mypage{
     font-size: xx-large;
+    font-family: 'Annie Use Your Telescope', cursive;
+}
+
+.attention{
+    color: #ff00aa;
+    font-size: x-large;
     font-family: 'Annie Use Your Telescope', cursive;
 }

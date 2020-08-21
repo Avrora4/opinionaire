@@ -16,7 +16,12 @@
         <div class="card-header">@{{index+1}}.Question</div>
             <div class="card-body">
                 <p>Enter the question contents!!</p>
-                <input type='text' :name='"questions["+index+"][text]"' v-model='question.text' required class='form-control'>  
+                <input type='text' :name='"questions["+index+"][text]"' v-model='question.text' required class='form-control'>
+                <div class="attention">
+                    <p>Don`t use single quotation!</p>
+                </div>
+                <p></p>
+                <p></p>
                 <p>Choose the question form!</p>
                 <label><input type='radio' :name='"questions["+index+"][type]"' v-model='question.type' value='text' required> text</label>
                 <label><input type='radio' :name='"questions["+index+"][type]"' v-model='question.type' value='number' required> number</label>
