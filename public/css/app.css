@@ -9,7 +9,7 @@
 .title{
     color: #ff37ff;
     font-size: xx-large;
-    font-family: 'Mrs Saint Delafield', cursive;
+    font-family: 'Annie Use Your Telescope', cursive;
 }
 
 .User_information{
@@ -18,7 +18,7 @@
 }
 
 .card-body{
-    font-size: large;
+    font-size: xx-large;
     font-family: 'Annie Use Your Telescope', cursive;
 }
 
@@ -45,5 +45,16 @@
 
 .flex-center{
     font-size: xx-large;
+    font-family: 'Annie Use Your Telescope', cursive;
+}
+
+.to_mypage{
+    font-size: xx-large;
+    font-family: 'Annie Use Your Telescope', cursive;
+}
+
+.attention{
+    color: #ff00aa;
+    font-size: x-large;
     font-family: 'Annie Use Your Telescope', cursive;
 }

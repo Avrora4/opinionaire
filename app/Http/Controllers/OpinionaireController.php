@@ -10,9 +10,15 @@ use Illuminate\Support\Facades\DB;
 
 class OpinionaireController extends Controller
 {
-    public function show()
+    public function show(Request $request)
     {
-        return view('users.opinionaire_create' ,["questions"=>[(object)["items" => [""]]]]);
+        $title = $request->input('title') ?? "";
+        $questions = $request->input('questions') ?? [(object)["items" => [""]]];
+
+        return view('users.opinionaire_create' ,[
+            "questions"=>$questions,
+            "title" => $title,
+            ]);
     }
 
     public function comfirm(Request $request)
@@ -42,19 +48,41 @@ class OpinionaireController extends Controller
         ]);
     }
 
-    public function result($id)
+    public function edit(Opinionaire $opinionaire)
     {
-        $opinionaire = Opinionaire::find($id);
+        $user = Auth::user();
+        if ($opinionaire->user_id != $user->id){
+            abort(403, 'Unauthorized action.');
+        };
 
-        $result =[];
-        foreach(Answer::where("opinionaire_id",$id)->get() as $row){
-            $result[] = $row->getAnswers();
-        }
+        return view('users.edit', 
+        ['user' => $user,
+        "title" => $opinionaire->title,
+        "opinionaire" => $opinionaire,
+        "questions" => $opinionaire->getQuestions(),
+    ],
+    );
+    }
 
-        return view('users.opinionaire_result',[
-            "opinionaire" => $opinionaire,
-            "result" => $result,
-            "questions" =>$opinionaire->getQuestions(),
+    public function edit_save(Request $request, Opinionaire $opinionaire)
+    {
+        $user = Auth::user();
+        if ($opinionaire->user_id != $user->id){
+            abort(403, 'Unauthorized action.');
+        };
+        
+        $title = $request->input('title');
+        $questions = $request->input("questions");
+
+        $opinionaire->user_id = Auth::id();
+        $opinionaire->title = $title;
+        $opinionaire->questions = json_encode($questions);
+        $opinionaire->save();
+
+        return view('users.opinionaire_complete',[
+            "title" => $title,
+            "opinionaire" => $opinionaire
         ]);
     }
+
 }

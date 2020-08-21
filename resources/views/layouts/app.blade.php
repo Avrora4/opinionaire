@@ -14,6 +14,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap' rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -63,6 +64,14 @@
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    <a class="dropdown-item" href="{{ route('mypage') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('mypage-form').submit();">
+                                        {{ __('Mypage') }}
+                                    </a>
+                                    <form id="mypage-form" action="{{ route('mypage_p') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>

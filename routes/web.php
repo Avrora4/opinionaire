@@ -18,13 +18,13 @@ use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/users/{id}', 'UserController@show');
+Route::get('/users/{user}', 'UserController@show');
 
 Route::get('me', 'UserController@edit');
 
@@ -36,7 +36,9 @@ Route::post('opinionaire_answer','OpinionaireController@answer');
 
 Route::middleware('auth')->group(function () {
     
-    Route::get('mypage','MypageController@show');
+    Route::get('mypage','MypageController@show')->name("mypage");
+
+    Route::post('mypage','MypageController@show')->name("mypage_p");
 
     Route::get('opinionaire_create','OpinionaireController@show');
 
@@ -46,17 +48,27 @@ Route::middleware('auth')->group(function () {
 
     Route::post('opinionaire_save','OpinionaireController@save');
 
-    Route::get('opinionaire/{id}/result','OpinionaireController@result');
+    Route::get('my/opinionaire','AnswerListController@list')->name("my_opinionaire");
+
+    Route::get('my/{opinionaire}/edit','OpinionaireController@edit')->name("my_opinionaire_edit");
+
+    Route::post('my/{opinionaire}/edit','OpinionaireController@edit_save')->name("my_opinionaire_edit_save");
+    
+    Route::get('my/{opinionaire}/delete','AnswerListController@delete')->name("my_opinionaire_delete");
+    
+    Route::get('my/{opinionaire}/answer','AnswerController@answer')->name("my_opinionaire_answer");
+
+    Route::get('myopinionaire/{opinionaire}/result','AnswerListController@result')->name("my_opinionaire_result");
 
 });
 
 //Route::get('opinionaire_{{$opinionaire->user_id}}_{{$opinionaire->title}}','');
 
-Route::get('answer/{id}','AnswerController@answer');
+Route::get('answer/{opinionaire}','AnswerController@answer')->name("answer");
 
-Route::post('answer/{id}/comfirm','AnswerController@comfirm');
+Route::post('answer/{opinionaire}/comfirm','AnswerController@comfirm')->name("answer_comfirm");
 
-Route::post('answer/{id}/save','AnswerController@save');
+Route::post('answer/{opinionaire}/save','AnswerController@save')->name("answer_save");
 
 
 
