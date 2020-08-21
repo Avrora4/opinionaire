@@ -35,7 +35,6 @@
                         @endif
                     </div>
                 </div>
-            </div>
             @endforeach
         <button type='submit' class="btn btn-info" style='margin:5px 0'>ANSWER</button>
     </form>

@@ -15,9 +15,13 @@
             <div class="card-body">
                 <ul>
                     @if ($question['type'] =='text' || $question['type'] =='number')
-                        @foreach (array_column($result,$index) as $a)
-                            <li>{{$a}}</li>
-                        @endforeach
+                        @if ($result != null)
+                            @foreach (array_column($result,$index) as $a)
+                                <li>{{$a}}</li>
+                            @endforeach
+                        @else
+                            <p>No result!!</p>
+                        @endif
                     @else
                         <canvas id="select{{$index}}"></canvas>
                     @endif
