@@ -30,8 +30,9 @@
 
 
 # Usage
-- 'http://localhost:8000/'にアクセス
-- 右上のregisterより新規でユーザー情報を登録し、'http://localhost:8000/mypage'へ
+- php artisan serve でサーバーを起動
+- http://localhost:8000/ にアクセス
+- 右上のregisterより新規でユーザー情報を登録し、http://localhost:8000/mypage sへ
 
     - createを選択し、簡単なアンケートを作成しよう
     - listを選択すると、今まで作成したアンケートを見ることができ、それぞれ編集や削除が行えます。
