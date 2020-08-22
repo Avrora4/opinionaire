@@ -8,7 +8,7 @@
     <div class="title">
         <h1>{{$opinionaire->title}}</h1>
     </div>
-    <div id="data_opinionaire" data-opinionaire="{{json_encode(compact('opinionaire','result'))}}">
+    <div id="data_opinionaire" data-opinionaire="{{json_encode(compact('opinionaire','result'), JSON_HEX_APOS | JSON_HEX_QUOT)}}">
         @foreach ($questions as $index => $question)
         <div class="card-header">
             <h2>{{$index+1}}. {{$question['text']}}</h2>

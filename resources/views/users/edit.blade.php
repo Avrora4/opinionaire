@@ -4,7 +4,7 @@
 <div class="title">
     <h1>Opinonaire Edit</h1>
 </div>
-<form method="POST" action="{{route('my_opinionaire_edit_save',['opinionaire'=>$opinionaire])}}" id='creat_app' class='opinonaire_create' data-questions='<?= json_encode($questions)?>' >
+<form method="POST" action="{{route('my_opinionaire_edit_save',['opinionaire'=>$opinionaire])}}" id='creat_app' class='opinonaire_create' data-questions='<?= json_encode($questions,JSON_HEX_APOS | JSON_HEX_QUOT)?>' >
     @csrf
     <div class="create_c">
         <p>What's questions title?</p>
@@ -17,9 +17,6 @@
             <div class="card-body">
                 <p>Enter the question contents!!</p>
                 <input type='text' :name='"questions["+index+"][text]"' v-model='question.text' required class='form-control'>
-                <div class="attention">
-                    <p>Don`t use single quotation!</p>
-                </div>
                 <p></p>
                 <p></p>
                 <p>Choose the question form!</p>
