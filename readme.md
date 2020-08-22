@@ -13,24 +13,27 @@
 結果をボタン一つで表示できます。
 あとからでもアンケートの内容を再編集できるようになっています。
 
+Vue.jsでHTMLとJavaScriptの同期を実現した。
+Chart.jsを用いることでデータベースの内容をJavaScriptを用いてグラフとして表示した。
+
 # Requirement
 - PHP 7.4.4
-- Laravel Framework 7.21.0
+- Laravel 7.21.0
 - MySQL
 - Bootstrap 4.5
 - composer 1.10.5
 
 
 # setup
-- git clone https://github.com/Avrora4/opinionaire.git
-- cd opinionaire
-- composer install
-- cp .env.example .env
-- php artisan db:migrate
+- `git clone https://github.com/Avrora4/opinionaire.git`
+- `cd opinionaire`
+- `composer install`
+- `cp .env.example .env`
+- `php artisan db:migrate`
 
 
 # Usage
-- php artisan serve でサーバーを起動
+- `php artisan serve` でサーバーを起動
 - http://localhost:8000/ にアクセス
 - 右上のregisterより新規でユーザー情報を登録し、http://localhost:8000/mypage sへ
 
