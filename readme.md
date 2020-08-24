@@ -13,7 +13,7 @@
 結果をボタン一つで表示できます。
 あとからでもアンケートの内容を再編集できるようになっています。
 
-Vue.jsでHTMLとJavaScriptの同期を実現した。
+Vue.jsでHTMLとJavaScriptリンクする形で画面の動作をを実現した。
 Chart.jsを用いることでデータベースの内容をJavaScriptを用いてグラフとして表示した。
 
 # Requirement
@@ -29,7 +29,8 @@ Chart.jsを用いることでデータベースの内容をJavaScriptを用い�
 - `cd opinionaire`
 - `composer install`
 - `cp .env.example .env`
-- `php artisan db:migrate`
+- `php artisan migrate`
+- `php artisan key:generate`
 
 
 # Usage
