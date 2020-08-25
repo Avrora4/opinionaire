@@ -13,8 +13,8 @@
 結果をボタン一つで表示できます。
 あとからでもアンケートの内容を再編集できるようになっています。
 
-Vue.jsでHTMLとJavaScriptリンクする形で画面の動作をを実現した。
-Chart.jsを用いることでデータベースの内容をJavaScriptを用いてグラフとして表示した。
+Vue.jsでHTMLとJavaScriptリンクする形で画面の動作をを実現しています。
+Chart.jsを用いることでデータベースの内容をJavaScriptを用いてグラフとして表示しています。
 
 # Requirement
 - PHP 7.4.4
